@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Captioning</title>
+</head>
+<body>
+	<body bgcolor="#7768ae">
+	<h1 align="center"> <font color ="#553D36"><b>Welcome to AI Image Captioning</font></b></h1>
+    <p>Please upload a Picture </p>
+    <h3>Prediction: {{prediction}}</h3>
+	<form method="POST" action="/" enctype="multipart/form-data">
+		<input type="file" name="image" placeholder="Your Image">
+		<input type="submit">
+	</form>
+	
+	{%if your_result%}
+
+	<img src  ="{{ your_result['image']}}" width="500" height="333">
+	<h2><font color="red">Generated Caption : <i> {{your_result['caption']}}</i> </font></h2>
+	
+	{%endif%}
+
+</body>
+</html>
